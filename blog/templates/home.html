@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load blog_tags %}
 {% block title %}Home {% endblock title %}
 
 
@@ -8,7 +8,7 @@
 <div class="home">
   {% for object in object_list %}
     <h3>{{object.title}}</h3>
-    <p>{{object.body}}</p>
+    <p>{{object.body|markdown}}</p>
   {% endfor %}
 </div>
 
